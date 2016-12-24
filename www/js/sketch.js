@@ -9,11 +9,11 @@ var brancheRatioSlider;
 var angleSlider;
 
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(600, 600);
 
-  leafSlider = createSlider(1, 10, 4, 1);
-  brancheRatioSlider = createSlider(0.3,0.75,0.66,0.01);
-  angleSlider = createSlider(PI/12,PI/4,PI/6,0.01);
+  leafSlider = createSlider(1, 10, 7, 1);
+  brancheRatioSlider = createSlider(0.5,0.8,0.7,0.01);
+  angleSlider = createSlider(PI/18,PI/4.5,PI/5.5,0.01);
 
 }
 
