@@ -10,22 +10,20 @@ function Branch(begin, end, level) {
     line(this.begin.x, this.begin.y, this.end.x, this.end.y);
   }
 
-  this.branchA = function() {
+  this.branch = function(angle) {
     var brancheRatio = brancheRatioSlider.value();
     var dir = p5.Vector.sub(this.end, this.begin);
-    dir.rotate(angleSlider.value());
+    dir.rotate(angle);
     dir.mult(brancheRatio);
     var newEnd = p5.Vector.add(this.end, dir);
     var b = new Branch(this.end, newEnd, this.level + 1);
     return b;
   }
+
+  this.branchA = function() {
+    return this.branch(angleSlider.value());
+  }
   this.branchB = function() {
-    var brancheRatio = brancheRatioSlider.value();
-    var dir = p5.Vector.sub(this.end, this.begin);
-    dir.rotate(-angleSlider.value());
-    dir.mult(brancheRatio);
-    var newEnd = p5.Vector.add(this.end, dir);
-    var b = new Branch(this.end, newEnd, this.level + 1);
-    return b;
+    return this.branch(-angleSlider.value());
   }
 }
