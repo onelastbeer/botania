@@ -11,10 +11,10 @@ function Branch(begin, end, level) {
   }
 
   this.branch = function(angle) {
-    var brancheRatio = brancheRatioSlider.value();
+    var branchRatio = branchRatioSlider.value();
     var dir = p5.Vector.sub(this.end, this.begin);
     dir.rotate(angle);
-    dir.mult(brancheRatio);
+    dir.mult(branchRatio);
     var newEnd = p5.Vector.add(this.end, dir);
     var b = new Branch(this.end, newEnd, this.level + 1);
     return b;
